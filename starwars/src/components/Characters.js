@@ -2,15 +2,17 @@ import React from 'react';
 import Character from './Character';
 
 class Characters extends React.Component {
-constructor() {
-    super();
+constructor(props) {
+    super(props);
     this.state = {};
 }
 render() {
     return (
         <div>
             <div>Each Character</div>
-            <Character char="put name here" />
+            {this.props.chars.map((char, index) => {
+                return <Character key={index} name={char.name} />
+            })}
         </div>
     );
 }
