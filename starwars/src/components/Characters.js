@@ -18,7 +18,7 @@ handleClick = () => {
 render() {
     return (
         <div>
-            <div onClick={this.handleClick} className="character">{this.props.char.name}</div>
+            <div onClick={this.handleClick} className={this.state.toggled ? "character--toggled" : "character"}>{this.props.char.name}</div>
             {this.state.toggled ? <Character char={this.props.char} /> : null}
         </div>
     );
